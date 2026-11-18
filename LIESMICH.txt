@@ -1,0 +1,27 @@
+K&K Transporte Jansen – Website
+
+INHALT
+  index.html    Die komplette Seite (inkl. Impressum und Datenschutz)
+  bilder/       Die vier Fotos der Sektion "Einblicke"
+  favicon.svg   Symbol im Browser-Tab
+  robots.txt    Erlaubt Suchmaschinen das Lesen der Seite
+
+HOCHLADEN
+  Den INHALT dieses Ordners (nicht den Ordner selbst) per FTP oder im
+  Dateimanager des Hosters ins Web-Hauptverzeichnis legen
+  (heisst meist htdocs, public_html oder www). Fertig.
+  HTTPS/SSL beim Hoster aktivieren.
+
+VOR DEM LIVEGANG AUSFUELLEN (in index.html nach "<mark>" suchen)
+  - Rechtsform / genaue Firmierung
+  - USt-IdNr.
+  - Handelsregister (oder Abschnitt loeschen)
+  - Name und Anschrift des Hosters, Speicherdauer der Logdaten
+  - Auftragsverarbeitungsvertrag mit dem Hoster abschliessen
+  - Datum der Datenschutzerklaerung
+  Danach die <mark>-Markierungen entfernen.
+
+HINWEIS
+  Impressum und Datenschutzerklaerung sind Vorlagen und ersetzen keine
+  rechtliche Pruefung. Bilder und Skripte nur lokal einbinden, sonst
+  stimmt die Datenschutzerklaerung nicht mehr.

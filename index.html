@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>K&amp;K Transporte Jansen – Transporte europaweit | Mönchengladbach</title>
+<meta name="description" content="K&amp;K Transporte Jansen aus Mönchengladbach: Transporte in Deutschland und europaweit. Persönlich, direkt, zuverlässig. Jetzt unverbindlich anfragen.">
+<style>
+:root{
+  --red:#e2001a; --red-d:#b00014; --ink:#0c0d10; --ink2:#15171c; --line:#2a2d35;
+  --paper:#f5f4f0; --mute:#9aa0ab; --white:#fff;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--ink);color:var(--white);line-height:1.55;overflow-x:hidden}
+a{color:inherit}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+h1,h2,h3{font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:-.02em;line-height:.95}
+.eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red)}
+
+/* progress + nav */
+#bar{position:fixed;inset:0 auto auto 0;height:4px;width:100%;background:var(--red);transform-origin:0 50%;transform:scaleX(0);z-index:60}
+header{position:fixed;top:4px;left:0;right:0;z-index:50;transition:background .3s,box-shadow .3s}
+header.solid{background:rgba(12,13,16,.92);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand b{background:var(--red);padding:4px 16px 4px 10px;font-size:1.25rem;font-weight:900;font-style:italic;clip-path:polygon(0 0,82% 0,100% 50%,82% 100%,0 100%)}
+.brand span{font-size:.72rem;font-weight:800;letter-spacing:.12em;line-height:1.15;text-transform:uppercase}
+.nav nav{display:flex;gap:26px;align-items:center}
+.nav nav a{text-decoration:none;font-size:.9rem;font-weight:600;opacity:.85}
+.nav nav a:hover{opacity:1;color:var(--red)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;text-decoration:none;font-weight:800;padding:14px 22px;border:0;cursor:pointer;font-size:1rem;font-family:inherit;transition:transform .2s,background .2s;clip-path:polygon(0 0,calc(100% - 14px) 0,100% 50%,calc(100% - 14px) 100%,0 100%);padding-right:34px}
+.btn:hover{background:var(--red-d);transform:translateX(4px)}
+.btn.ghost{background:transparent;clip-path:none;border:2px solid #fff;padding:12px 22px}
+.btn.ghost:hover{background:#fff;color:var(--ink);transform:none}
+.nav .btn{padding:9px 26px 9px 14px;font-size:.85rem}
+@media(max-width:760px){.nav nav a:not(.btn){display:none}}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;padding:120px 0 72px;overflow:hidden;
+  background:radial-gradient(120% 80% at 80% 0%,#2a0a0f 0%,var(--ink) 60%)}
+.ghost-type{position:absolute;right:-4vw;top:12vh;font-size:clamp(9rem,38vw,30rem);font-weight:900;font-style:italic;line-height:.8;color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.07);will-change:transform;user-select:none;pointer-events:none}
+.stripes{position:absolute;left:0;right:0;top:34%;height:14px;background:repeating-linear-gradient(90deg,var(--red) 0 120px,transparent 120px 180px);opacity:.9;will-change:transform;width:200%}
+.stars{position:absolute;right:6vw;bottom:10vh;width:clamp(120px,22vw,240px);aspect-ratio:1;opacity:.5;will-change:transform}
+.hero .wrap{position:relative}
+.hero h1{font-size:clamp(3rem,11vw,8.5rem);margin:14px 0 22px}
+.hero h1 span{display:block;overflow:hidden}
+.hero h1 i{display:block;font-style:inherit;transform:translateY(105%);animation:up .9s cubic-bezier(.2,.8,.2,1) forwards}
+.hero h1 span:nth-child(2) i{animation-delay:.12s;color:var(--red)}
+.hero h1 span:nth-child(3) i{animation-delay:.24s}
+@keyframes up{to{transform:none}}
+.hero p{max-width:34rem;font-size:1.1rem;color:#d5d8de;margin-bottom:28px}
+.cta{display:flex;flex-wrap:wrap;gap:14px}
+.scrollhint{position:absolute;left:50%;bottom:18px;width:2px;height:40px;background:linear-gradient(var(--red),transparent);animation:hint 1.6s infinite}
+@keyframes hint{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* marquee */
+.marquee{background:var(--red);padding:14px 0;overflow:hidden;white-space:nowrap}
+.marquee div{display:inline-block;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.06em;font-size:1.05rem;will-change:transform}
+.marquee span{margin:0 22px}
+
+/* sections */
+section{padding:96px 0}
+.light{background:var(--paper);color:var(--ink)}
+h2{font-size:clamp(2.2rem,6.5vw,4.6rem);margin:12px 0 20px}
+.lead{max-width:40rem;font-size:1.08rem;color:var(--mute)}
+.light .lead{color:#555b66}
+.rv{opacity:0;transform:translateY(40px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}
+.rv.l{transform:translateX(-60px)} .rv.r{transform:translateX(60px)}
+.rv.in{opacity:1;transform:none}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:44px}
+.card{background:#fff;padding:30px 26px 34px;position:relative;overflow:hidden;border-bottom:4px solid var(--ink);transition:transform .3s,border-color .3s}
+.card:hover{transform:translateY(-6px);border-color:var(--red)}
+.card .n{font-size:3.4rem;font-weight:900;font-style:italic;color:transparent;-webkit-text-stroke:1.5px var(--red);line-height:1}
+.card h3{font-size:1.35rem;margin:14px 0 10px}
+.card p{color:#555b66;font-size:.97rem}
+
+/* route (sticky scroll) */
+.route{height:260vh;padding:0;position:relative}
+.route .stick{position:sticky;top:0;height:100svh;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.road{position:relative;height:90px;margin:46px 0 30px}
+.road::before{content:"";position:absolute;left:0;right:0;bottom:14px;height:4px;background:var(--line)}
+.road .fill{position:absolute;left:0;bottom:14px;height:4px;width:100%;background:var(--red);transform-origin:0 50%;transform:scaleX(0)}
+.truck{position:absolute;bottom:14px;left:0;width:110px;will-change:transform}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.step{opacity:.28;transition:opacity .4s,transform .4s;transform:translateY(8px)}
+.step.on{opacity:1;transform:none}
+.step b{display:block;color:var(--red);font-size:.8rem;letter-spacing:.18em}
+.step h3{font-size:clamp(1rem,2.6vw,1.5rem);margin:6px 0}
+.step p{color:var(--mute);font-size:.9rem}
+@media(max-width:700px){.steps{grid-template-columns:1fr 1fr}.step p{font-size:.82rem}}
+
+/* about */
+.split{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+@media(max-width:820px){.split{grid-template-columns:1fr}}
+.owner{border-left:6px solid var(--red);padding:26px 28px;background:var(--ink2)}
+.owner strong{display:block;font-size:1.5rem;font-weight:900;font-style:italic;text-transform:uppercase}
+.owner small{color:var(--mute);letter-spacing:.1em;text-transform:uppercase;font-size:.75rem}
+.owner p{margin-top:14px;color:#d5d8de}
+ul.ticks{list-style:none;margin-top:26px;display:grid;gap:12px}
+ul.ticks li{padding-left:34px;position:relative}
+ul.ticks li::before{content:"";position:absolute;left:0;top:.45em;width:20px;height:8px;background:var(--red);clip-path:polygon(0 0,70% 0,100% 50%,70% 100%,0 100%)}
+
+/* gallery */
+#einblicke{background:var(--ink2)}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(150px,22vw,250px);gap:14px;margin-top:44px}
+.gal figure{position:relative;overflow:hidden;background:#1d2027;clip-path:inset(0 100% 0 0);transition:clip-path 1s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}
+.gal figure.in{clip-path:inset(0)}
+.gal figure{grid-row:span 2}
+.gal figure:nth-child(1){grid-column:span 2}
+.gal figure:nth-child(4){grid-column:span 4}
+.gal img,.gal svg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.15);transition:transform 1.4s cubic-bezier(.2,.8,.2,1)}
+.gal figure.in img,.gal figure.in svg{transform:scale(1)}
+.gal figure:hover img,.gal figure:hover svg{transform:scale(1.06)}
+.gal figcaption{position:absolute;left:0;bottom:0;background:var(--red);padding:6px 22px 6px 12px;font-size:.78rem;font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:.06em;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 50%,calc(100% - 12px) 100%,0 100%)}
+@media(max-width:700px){.gal{grid-template-columns:1fr 1fr;grid-auto-rows:32vw}.gal figure:nth-child(4){grid-column:span 2}}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+@media(max-width:820px){.contact{grid-template-columns:1fr}}
+.facts a,.facts div{display:block;text-decoration:none;padding:18px 0;border-bottom:1px solid #d9d7d0}
+.facts small{display:block;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--red);font-weight:700}
+.facts span{font-size:1.25rem;font-weight:800}
+form{display:grid;gap:14px}
+label{font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+input,textarea{width:100%;margin-top:6px;padding:14px;border:2px solid var(--ink);background:#fff;font:inherit;border-radius:0}
+input:focus,textarea:focus{outline:3px solid var(--red);outline-offset:1px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.note{font-size:.82rem;color:#555b66}
+
+footer{padding:44px 0;border-top:1px solid var(--line);font-size:.9rem;color:var(--mute)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px 28px;justify-content:space-between}
+footer a{margin-left:18px}
+
+/* legal */
+#legal{display:none;background:var(--paper);color:var(--ink);padding:120px 0 80px;min-height:100vh}
+body.legal #site{display:none} body.legal #legal{display:block}
+#legal article{display:none;max-width:46rem}
+#legal article.show{display:block}
+#legal h2{font-size:clamp(2rem,6vw,3.2rem)}
+#legal h3{font-style:normal;text-transform:none;letter-spacing:0;font-size:1.15rem;margin:30px 0 8px;line-height:1.3}
+#legal p,#legal li{margin-bottom:10px;color:#2b2e35}
+#legal ul{padding-left:20px}
+mark{background:#ffe45c;padding:1px 5px;font-weight:600}
+.back{display:inline-block;margin-bottom:28px;font-weight:700;color:var(--red)}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}.hero h1 i{transform:none}
+}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+
+<header id="hd">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="K&amp;K Transporte Jansen – Startseite"><b>K&amp;K</b><span>Transporte<br>Jansen</span></a>
+    <nav aria-label="Hauptnavigation">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#ueber">Über uns</a>
+      <a href="#einblicke">Einblicke</a>
+      <a class="btn" href="#kontakt">Anfragen</a>
+    </nav>
+  </div>
+</header>
+
+<div id="site">
+<main id="top">
+  <section class="hero">
+    <div class="ghost-type" data-px="0.25" aria-hidden="true">K&amp;K</div>
+    <div class="stripes" data-px-x="-0.35" aria-hidden="true"></div>
+    <svg class="stars" id="stars" viewBox="0 0 200 200" aria-hidden="true"></svg>
+    <div class="wrap">
+      <p class="eyebrow">Mönchengladbach · Deutschland · Europa</p>
+      <h1><span><i>Transporte.</i></span><span><i>Europaweit.</i></span><span><i>Direkt.</i></span></h1>
+      <p>K&amp;K Transporte Jansen bringt Ihre Ware ans Ziel – inhabergeführt, mit festem Ansprechpartner und kurzen Wegen.</p>
+      <div class="cta">
+        <a class="btn" href="#kontakt">Transport anfragen</a>
+        <a class="btn ghost" href="tel:+492166310909">02166 – 31 09 09</a>
+      </div>
+    </div>
+    <div class="scrollhint" aria-hidden="true"></div>
+  </section>
+
+  <div class="marquee" aria-hidden="true"><div id="mq">
+    <span>Nah- und Ferntransporte</span>▸<span>Schwertransporte</span>▸<span>Jumbotransporte</span>▸<span>Umzüge</span>▸<span>Sonderfahrten</span>▸<span>Nah- und Ferntransporte</span>▸<span>Schwertransporte</span>▸<span>Jumbotransporte</span>▸<span>Umzüge</span>▸<span>Sonderfahrten</span>▸<span>Nah- und Ferntransporte</span>▸<span>Schwertransporte</span>▸<span>Jumbotransporte</span>▸<span>Umzüge</span>▸<span>Sonderfahrten</span>
+  </div></div>
+
+  <section class="light" id="leistungen">
+    <div class="wrap">
+      <p class="eyebrow rv">Leistungen</p>
+      <h2 class="rv">Was wir für Sie fahren</h2>
+      <p class="lead rv">Vom einzelnen Packstück bis zur kompletten Ladung: Sagen Sie uns, was wohin muss – wir kümmern uns um den Rest.</p>
+      <div class="grid">
+        <div class="card rv" style="--d:.0s"><div class="n">01</div><h3>Nah- und Ferntransporte</h3><p>Von der Tour um die Ecke bis zur Fahrt quer durch Europa – geplant und durchgeführt aus einer Hand.</p></div>
+        <div class="card rv" style="--d:.1s"><div class="n">02</div><h3>Schwer- und Jumbotransporte</h3><p>Für Ware, die schwer oder besonders voluminös ist – inklusive Verladung mit dem passenden Gerät.</p></div>
+        <div class="card rv" style="--d:.2s"><div class="n">03</div><h3>Kurier- und Sonderfahrten</h3><p>Europaweit und direkt: Ihre Sendung fährt ohne Umwege vom Absender zum Empfänger.</p></div>
+        <div class="card rv" style="--d:.3s"><div class="n">04</div><h3>Umzüge &amp; Entrümpelung</h3><p>Umzüge, Entrümpelungen und Haushaltsauflösungen – sauber und zuverlässig erledigt.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="route" id="ablauf" aria-label="So läuft Ihr Transport ab">
+    <div class="stick"><div class="wrap">
+      <p class="eyebrow">Ablauf</p>
+      <h2>Von der Anfrage<br>bis zur Rampe</h2>
+      <div class="road" aria-hidden="true">
+        <div class="fill" id="fill"></div>
+        <svg class="truck" id="truck" viewBox="0 0 110 60">
+          <rect x="2" y="8" width="66" height="36" fill="#fff"/>
+          <rect x="2" y="22" width="66" height="8" fill="#e2001a"/>
+          <path d="M70 20h20l14 14v10H70z" fill="#e2001a"/>
+          <path d="M76 24h12l8 9H76z" fill="#0c0d10"/>
+          <circle cx="22" cy="48" r="9" fill="#0c0d10" stroke="#fff" stroke-width="3"/>
+          <circle cx="86" cy="48" r="9" fill="#0c0d10" stroke="#fff" stroke-width="3"/>
+        </svg>
+      </div>
+      <div class="steps">
+        <div class="step"><b>01</b><h3>Anfrage</h3><p>Anruf, Mail oder Formular – mit Strecke, Ware und Termin.</p></div>
+        <div class="step"><b>02</b><h3>Angebot</h3><p>Sie erhalten zeitnah ein klares, unverbindliches Angebot.</p></div>
+        <div class="step"><b>03</b><h3>Abholung</h3><p>Wir laden zum vereinbarten Termin bei Ihnen oder Ihrem Absender.</p></div>
+        <div class="step"><b>04</b><h3>Zustellung</h3><p>Ihre Ware kommt am Ziel an – Sie bekommen Bescheid.</p></div>
+      </div>
+    </div></div>
+  </section>
+
+  <section id="ueber">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow rv l">Über uns</p>
+        <h2 class="rv l">Ein Ansprech&shy;partner. Kein Callcenter.</h2>
+        <p class="lead rv l">K&amp;K Transporte Jansen ist ein inhabergeführtes Transportunternehmen aus Mönchengladbach. Bei uns sprechen Sie direkt mit dem, der entscheidet.</p>
+        <ul class="ticks">
+          <li class="rv l" style="--d:.05s">Sitz in Mönchengladbach, unterwegs in ganz Europa</li>
+          <li class="rv l" style="--d:.1s">Direkte Erreichbarkeit per Telefon und Mobil</li>
+          <li class="rv l" style="--d:.15s">Klare Absprachen statt Kleingedrucktem</li>
+        </ul>
+      </div>
+      <div class="owner rv r">
+        <small>Geschäftsführender Inhaber</small>
+        <strong>Erkan Celikten</strong>
+        <p>Ihr direkter Draht für Anfragen, Angebote und laufende Aufträge.</p>
+        <p><a href="tel:+491782141940"><b>Mobil 0178 – 214 19 40</b></a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="einblicke">
+    <div class="wrap">
+      <p class="eyebrow rv">Einblicke</p>
+      <h2 class="rv">Unterwegs für Sie</h2>
+      <div class="gal">
+        <figure class="gf" style="--d:0s"><img src="bilder/fuhrpark.jpg" alt="Vier Fahrzeuge von K&amp;K Transporte Jansen nebeneinander vor einer Halle" loading="lazy" style=""><figcaption>Fuhrpark</figcaption></figure>
+        <figure class="gf" style="--d:.1s"><img src="bilder/verladung.jpg" alt="Ein großer Schaltschrank wird per Kran auf einen Planen-LKW verladen" loading="lazy" style=""><figcaption>Verladung</figcaption></figure>
+        <figure class="gf" style="--d:.2s"><img src="bilder/planen-lkw.jpg" alt="Heck eines Planen-LKW mit Beschriftung K&amp;K Transporte Jansen" loading="lazy" style="object-position:50% 35%"><figcaption>Nah &amp; Fern</figcaption></figure>
+        <figure class="gf" style="--d:.1s"><img src="bilder/flotte.jpg" alt="Mehrere Transporter und LKW von K&amp;K Transporte Jansen an der Straße" loading="lazy" style=""><figcaption>Vom Kombi bis zum LKW</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="light" id="kontakt">
+    <div class="wrap">
+      <p class="eyebrow rv">Kontakt</p>
+      <h2 class="rv">Was dürfen wir fahren?</h2>
+      <div class="contact">
+        <div class="facts rv l">
+          <a href="tel:+492166310909"><small>Telefon</small><span>02166 – 31 09 09</span></a>
+          <a href="tel:+491782141940"><small>Mobil</small><span>0178 – 214 19 40</span></a>
+          <a href="mailto:info@kk-transporte-jansen.de"><small>E-Mail</small><span>info@kk-transporte-jansen.de</span></a>
+          <div><small>Fax</small><span>02166 – 31 09 40</span></div>
+          <div><small>Adresse</small><span>Bendhecker Straße 6–10<br>41236 Mönchengladbach</span></div>
+        </div>
+        <form id="f" class="rv r">
+          <div class="two">
+            <label>Name<input name="name" required autocomplete="name"></label>
+            <label>Telefon<input name="tel" type="tel" autocomplete="tel"></label>
+          </div>
+          <div class="two">
+            <label>Von (Ort)<input name="von" required></label>
+            <label>Nach (Ort)<input name="nach" required></label>
+          </div>
+          <label>Ware, Maße, Termin<textarea name="msg" rows="4" required></textarea></label>
+          <button class="btn" type="submit">Anfrage per E-Mail senden</button>
+          <p class="note">Das Formular öffnet Ihr E-Mail-Programm mit einer vorbereiteten Nachricht. Auf dieser Website werden dabei keine Daten gespeichert. Details in der <a href="#datenschutz">Datenschutzerklärung</a>.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+</div>
+
+<div id="legal">
+  <div class="wrap">
+    <a class="back" href="#top">← Zurück zur Startseite</a>
+
+    <article id="impressum">
+      <h2>Impressum</h2>
+      <h3>Angaben gemäß § 5 DDG</h3>
+      <p>K&amp;K Transporte Jansen<br>Inhaber: Erkan Celikten <mark>[Rechtsform / genaue Firmierung prüfen]</mark><br>Bendhecker Straße 6–10<br>41236 Mönchengladbach</p>
+      <h3>Kontakt</h3>
+      <p>Telefon: 02166 – 31 09 09<br>Telefax: 02166 – 31 09 40<br>E-Mail: info@kk-transporte-jansen.de</p>
+      <h3>Umsatzsteuer-ID</h3>
+      <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a UStG: <mark>[USt-IdNr. eintragen]</mark></p>
+      <h3>Registereintrag</h3>
+      <p><mark>[Falls im Handelsregister eingetragen: Registergericht und Registernummer – sonst Abschnitt löschen]</mark></p>
+      <h3>Verantwortlich für den Inhalt (§ 18 Abs. 2 MStV)</h3>
+      <p>Erkan Celikten, Anschrift wie oben</p>
+      <h3>Verbraucherstreitbeilegung</h3>
+      <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+      <h3>Haftung für Inhalte und Links</h3>
+      <p>Als Diensteanbieter sind wir für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Für Inhalte verlinkter externer Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
+    </article>
+
+    <article id="datenschutz">
+      <h2>Datenschutz</h2>
+      <h3>1. Verantwortlicher</h3>
+      <p>K&amp;K Transporte Jansen, Inhaber Erkan Celikten, Bendhecker Straße 6–10, 41236 Mönchengladbach, Telefon 02166 – 31 09 09, E-Mail info@kk-transporte-jansen.de</p>
+      <h3>2. Hosting und Server-Logfiles</h3>
+      <p>Diese Website wird bei <mark>[Name und Anschrift des Hosters eintragen]</mark> gehostet. Beim Aufruf der Seite verarbeitet der Hoster technisch notwendige Daten (IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, Browsertyp, Betriebssystem, Referrer). Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO; unser berechtigtes Interesse liegt im sicheren und stabilen Betrieb der Website. Die Logdaten werden nach <mark>[Speicherdauer laut Hoster]</mark> gelöscht. Mit dem Hoster besteht ein Vertrag zur Auftragsverarbeitung nach Art. 28 DSGVO <mark>[abschließen/prüfen]</mark>.</p>
+      <h3>3. Kontaktaufnahme</h3>
+      <p>Wenn Sie uns per E-Mail, Telefon oder Fax kontaktieren, verarbeiten wir Ihre Angaben zur Bearbeitung der Anfrage. Das Anfrageformular dieser Website überträgt keine Daten an uns oder einen Server; es öffnet lediglich Ihr eigenes E-Mail-Programm. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) bzw. lit. f DSGVO (Beantwortung allgemeiner Anfragen). Die Daten werden gelöscht, sobald die Anfrage erledigt ist und keine gesetzlichen Aufbewahrungspflichten bestehen.</p>
+      <h3>4. Cookies, Tracking, externe Inhalte</h3>
+      <p>Diese Website setzt keine Cookies, verwendet keine Analyse- oder Werbedienste und lädt keine Schriften, Karten oder Skripte von Drittanbietern.</p>
+      <h3>5. Ihre Rechte</h3>
+      <ul>
+        <li>Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17)</li>
+        <li>Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20)</li>
+        <li>Widerspruch gegen Verarbeitungen auf Grundlage berechtigter Interessen (Art. 21)</li>
+        <li>Beschwerde bei einer Aufsichtsbehörde (Art. 77), z. B. bei der Landesbeauftragten für Datenschutz und Informationsfreiheit Nordrhein-Westfalen</li>
+      </ul>
+      <p>Stand: <mark>[Datum eintragen]</mark></p>
+    </article>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> K&amp;K Transporte Jansen · Mönchengladbach</span>
+    <span><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)}, $$=function(s){return [].slice.call(document.querySelectorAll(s))};
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  $('#yr').textContent=new Date().getFullYear();
+
+  // EU-style star ring
+  var st=$('#stars'),h='';
+  for(var i=0;i<12;i++){var a=i/12*Math.PI*2,x=100+82*Math.sin(a),y=100-82*Math.cos(a);
+    h+='<text x="'+x.toFixed(1)+'" y="'+(y+8).toFixed(1)+'" font-size="24" text-anchor="middle" fill="#fff">★</text>';}
+  st.innerHTML=h;
+
+  // legal views
+  function route(){
+    var id=location.hash.slice(1), legal=(id==='impressum'||id==='datenschutz');
+    document.body.classList.toggle('legal',legal);
+    $$('#legal article').forEach(function(a){a.classList.toggle('show',a.id===id)});
+    if(legal) scrollTo(0,0);
+  }
+  addEventListener('hashchange',route); route();
+
+  // reveal
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+    $$('.rv,.gf').forEach(function(el){io.observe(el)});
+  } else $$('.rv,.gf').forEach(function(el){el.classList.add('in')});
+
+  // scroll-driven effects
+  var bar=$('#bar'),hd=$('#hd'),mq=$('#mq'),rt=$('.route'),truck=$('#truck'),fill=$('#fill'),road=$('.road'),steps=$$('.step'),
+      px=$$('[data-px]'),pxx=$$('[data-px-x]'),tick=false;
+  function frame(){
+    tick=false;
+    var y=scrollY, max=document.documentElement.scrollHeight-innerHeight;
+    bar.style.transform='scaleX('+(max>0?y/max:0)+')';
+    hd.classList.toggle('solid',y>40||document.body.classList.contains('legal'));
+    if(reduce){steps.forEach(function(s){s.classList.add('on')});fill.style.transform='scaleX(1)';return;}
+    px.forEach(function(el){el.style.transform='translateY('+(y*el.dataset.px)+'px)'});
+    pxx.forEach(function(el){el.style.transform='translateX('+(y*el.dataset.pxX)+'px)'});
+    st.style.transform='rotate('+(y*.08)+'deg)';
+    mq.style.transform='translateX('+(-(y*.4)%600)+'px)';
+    var r=rt.getBoundingClientRect(), p=Math.min(1,Math.max(0,-r.top/(r.height-innerHeight)));
+    var w=road.clientWidth-110;
+    truck.style.transform='translateX('+(p*w)+'px)';
+    fill.style.transform='scaleX('+p+')';
+    steps.forEach(function(s,i){s.classList.toggle('on',p>=i/steps.length-.02)});
+  }
+  function onScroll(){if(!tick){tick=true;requestAnimationFrame(frame)}}
+  addEventListener('scroll',onScroll,{passive:true}); addEventListener('resize',onScroll); frame();
+
+  // mailto form – no data leaves the page
+  $('#f').addEventListener('submit',function(e){
+    e.preventDefault();
+    var d=new FormData(e.target);
+    var body='Name: '+d.get('name')+'\nTelefon: '+d.get('tel')+'\nVon: '+d.get('von')+'\nNach: '+d.get('nach')+'\n\n'+d.get('msg');
+    location.href='mailto:info@kk-transporte-jansen.de?subject='+encodeURIComponent('Transportanfrage '+d.get('von')+' – '+d.get('nach'))+'&body='+encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>
